@@ -6,8 +6,8 @@ syntax.add {
   files = "%.obs$",
   comment = "#",
   patterns = {
-    { pattern = "#.*",                      type = "comment"  },
     { pattern = { "#~", "~#" },             type = "comment"  },
+    { pattern = "#.*",                      type = "comment"  },
     { pattern = { '"', '"', '\\' },         type = "string"   },
     { pattern = { "[%$%@]?\"", '"', '\\' }, type = "string"   }, -- string interpolation and verbatim
     { pattern = "'\\x%x?%x?%x?%x'",         type = "string"   }, -- character hexadecimal escape sequence
@@ -17,9 +17,11 @@ syntax.add {
     { pattern = "-?%d+[%d%.eE]*f?",         type = "number"   },
     { pattern = "-?%.?%d+f?",               type = "number"   },
     { pattern = "[%+%-=/%*%^%%<>!~|&]",     type = "operator" },
+    { pattern = ":=",                       type = "operator" },
     { pattern = "%?%?",                     type = "operator" }, -- ?? null-coalescing
     { pattern = "%?%.",                     type = "operator" }, -- ?. null-conditional
     { pattern = "[%a_][%w_]*%f[(]",         type = "function" },
+    { pattern = "@[%a_][%w_]*",             type = "function" },
     { pattern = "[%a_][%w_]*",              type = "symbol"   },
   },
   symbols = {
