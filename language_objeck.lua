@@ -65,7 +65,6 @@ syntax.add {
     ["and"] = "keyword",
     ["or"] = "keyword",
     ["xor"] = "keyword",
-    ["not"] = "keyword",
     -- types
     ["Nil"] = "keyword2",
     ["Byte"] = "keyword2",
