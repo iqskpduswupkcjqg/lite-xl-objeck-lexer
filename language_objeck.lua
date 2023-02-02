@@ -9,8 +9,6 @@ syntax.add {
     { pattern = { "#~", "~#" },             type = "comment"  },
     { pattern = "#.*",                      type = "comment"  },
     { pattern = { '"', '"', '\\' },         type = "string"   },
-    { pattern = { "[%$%@]?\"", '"', '\\' }, type = "string"   }, -- string interpolation and verbatim
-    { pattern = "'\\x%x?%x?%x?%x'",         type = "string"   }, -- character hexadecimal escape sequence
     { pattern = "'\\u%x%x%x%x'",            type = "string"   }, -- character unicode escape sequence
     { pattern = "'\\?.'",                   type = "string"   }, -- character literal
     { pattern = "-?0x%x+",                  type = "number"   },
@@ -19,8 +17,6 @@ syntax.add {
     { pattern = "-?%.?%d+f?",               type = "number"   },
     { pattern = "[%+%-=/%*%^%%<>!~|&]",     type = "operator" },
     { pattern = ":=",                       type = "operator" },
-    { pattern = "%?%?",                     type = "operator" }, -- ?? null-coalescing
-    { pattern = "%?%.",                     type = "operator" }, -- ?. null-conditional
     { pattern = "[%a_][%w_]*%f[(]",         type = "function" },
     { pattern = "@[%a_][%w_]*",             type = "function" },
     { pattern = "[%a_][%w_]*",              type = "symbol"   },
